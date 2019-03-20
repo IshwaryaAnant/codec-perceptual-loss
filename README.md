@@ -1,6 +1,21 @@
-##  Towards Perceptual Loss:  Using a Neural Network Codec Approximation as a Custom Loss Metric
+##  Part I: Training the Loss Network
 
-We train a neural network to approximate a low bit-rate codec and suggest the use of this network as a custom loss function.  We demonstrate perceptual improvement in reconstruction quality in a secondary, autoencoding task.
+Below are samples from several different tracks with results from the magnitude spectrogram loss network and the time domain loss network.  The lossless audio and ground truth coded samples (from an FFMPEG implementation of a 16kbps MP3 encoding) are given for comparison.
+
+
+```
+<audio controls="controls">
+  <source src="" type="audio/wav">
+</audio>
+
+<audio controls="controls">
+  <source src="" type="audio/wav">
+</audio>
+
+<audio controls="controls">
+  <source src="" type="audio/wav">
+</audio>
+```
 
 ### Markdown
 
