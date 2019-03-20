@@ -1,8 +1,6 @@
-## Welcome to GitHub Pages
+##  Towards Perceptual Loss:  Using a Neural Network Codec Approximation as a Custom Loss Metric
 
-You can use the [editor on GitHub](https://github.com/IshwaryaAnant/codec-perceptual-loss/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+We train a neural network to approximate a low bit-rate codec and suggest the use of this network as a custom loss function.  We demonstrate perceptual improvement in reconstruction quality in a secondary, autoencoding task.
 
 ### Markdown
 
