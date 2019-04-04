@@ -20,11 +20,16 @@ a:hover {
     text-decoration: underline;
 }
 h1 {
-    font-size: 3em;
+    font-size: 2em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
-p {
+h2 {
     font-size: 1.5em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+}
+
+p {
+    font-size: 1.3em;
     line-height: 1.4em;
     color: #333;
 }
@@ -40,4 +45,12 @@ ul.posts {
 
 ul.posts li {
     list-style: none;
+}
+
+audio {
+    width: 80%;
+}
+table
+{
+    table-layout: fixed;
 }

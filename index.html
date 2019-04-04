@@ -1,29 +1,243 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Hank Quinlan, Horrible Cop</title>
+        <title>Towards Perceptual Loss</title>
         <link rel="stylesheet" type="text/css" href="css/main.css">
     </head>
     <body>
-        <nav>
+        <nav> 
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/cv">CV</a></li>
-                <li><a href="/blog">Blog</a></li>
+                <li><a href="">Code</a></li>
+                <li><a href="">Paper</a></li>
             </ul>
+
         </nav>
         <div class="container">
             <div class="blurb">
-                <h1>Hi there, I'm Hank Quinlan!</h1>
-                <p>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
+                <h1>Towards Perceptual Loss: Using a Neural Network Codec Approximation as a Custom Loss Metric</h1>
+                    <p>We train a neural network to approximate a low bit-rate codec and suggest the use of this network as a custom loss function. We demonstrate perceptual improvement in reconstruction quality in a secondary, autoencoding task.</p>
+
+                    <h2 style="text-align:center"> Part I: Modeling a Codec as a Loss Function</h2>
+                     <table style="width:80%; margin: 0px auto;">
+                        <tr>
+                            <th></th>
+                            <th>Track 1</th>
+                            <th>Track 2</th>
+                            <th>Track 3</th>
+                        </tr>
+                         <tr style="text-align: center;">
+                            <td>Lossless</td>
+                            <td>
+                                <audio controls="controls">
+                                    <source src="" type="audio/wav">
+                                </audio>
+                            </td>
+
+                            <td>
+                                <audio controls="controls">
+                                    <source src="" type="audio/wav">
+                                </audio>
+                            </td>
+
+                            <td>
+                                <audio controls="controls">
+                                    <source src="" type="audio/wav">
+                                </audio>
+                            </td>
+
+                        </tr>
+                        <tr style="text-align: center;">
+                            <td>FFMPEG</td>
+                            <td>
+                                <audio controls="controls">
+                                    <source src="" type="audio/wav">
+                                </audio>
+                            </td>
+
+                            <td>
+                                <audio controls="controls">
+                                    <source src="" type="audio/wav">
+                                </audio>
+                            </td>
+
+                            <td>
+                                <audio controls="controls">
+                                    <source src="" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+
+
+                        <tr style="text-align: center;">
+                            <td>Mag. STFT (FFMPEG phase) </td>
+                            <td>
+                                <audio controls="controls">
+                                    <source src="" type="audio/wav">
+                                </audio>
+                            </td>
+
+                            <td>
+                                <audio controls="controls">
+                                    <source src="" type="audio/wav">
+                                </audio>
+                            </td>
+
+                            <td>
+                                <audio controls="controls">
+                                    <source src="" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+
+                        <tr style="text-align: center;">
+                            <td>Time Domain</td>
+                            <td>
+                                <audio controls="controls">
+                                    <source src="" type="audio/wav">
+                                </audio>
+                            </td>
+
+                            <td>
+                                <audio controls="controls">
+                                    <source src="" type="audio/wav">
+                                </audio>
+                            </td>
+
+                            <td>
+                                <audio controls="controls">
+                                    <source src="" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+
+                    </table> 
+
+
+                     <h2 style="text-align:center"> Part II: Using the Loss Function with an Autoencoding Task</h2>
+                     <table style="width:80%; margin: 0px auto;">
+                        <tr>
+                            <th></th>
+                            <th>Track 1</th>
+                            <th>Track 2</th>
+                            <th>Track 3</th>
+                        </tr>
+                         <tr style="text-align: center;">
+                            <td>Lossless</td>
+                            <td>
+                                <audio controls="controls">
+                                    <source src="http://audio-mafia.media.mit.edu/codec-ab/media/ffs_samples_for_mushra_2/FS_ORIG 01 - Symphony No. 5- Allegro con brio_MONO.wav" type="audio/wav">
+                                </audio>
+                            </td>
+
+                            <td>
+                                <audio controls="controls">
+                                    <source src="http://audio-mafia.media.mit.edu/codec-ab/media/ffs_samples_for_mushra_2/FS_ORIG 01 Yazz And The Plastic Population - The Only Way Is Up_MONO-2.wav" type="audio/wav">
+                                </audio>
+                            </td>
+
+                            <td>
+                                <audio controls="controls">
+                                    <source src="http://audio-mafia.media.mit.edu/codec-ab/media/ffs_samples_for_mushra_2/FS_ORIG 06. Led Zeppelin - The Wanton Song_MONO.wav" type="audio/wav">
+                                </audio>
+                            </td>
+
+                        </tr>
+                        <tr style="text-align: center;">
+                            <td>Model A</td>
+                           <td>
+                                <audio controls="controls">
+                                    <source src="http://audio-mafia.media.mit.edu/codec-ab/media/ffs_samples_for_mushra_2/FS_TD BASELINE r_01 - Symphony No. 5- Allegro con brio_MONO.wav" type="audio/wav">
+                                </audio>
+                            </td>
+
+                            <td>
+                                <audio controls="controls">
+                                    <source src="http://audio-mafia.media.mit.edu/codec-ab/media/ffs_samples_for_mushra_2/FS_TD BASELINE r_01 Yazz And The Plastic Population - The Only Way Is Up_MONO.wav" type="audio/wav">
+                                </audio>
+                            </td>
+
+                            <td>
+                                <audio controls="controls">
+                                    <source src="http://audio-mafia.media.mit.edu/codec-ab/media/ffs_samples_for_mushra_2/FS_TD BASELINE r_06. Led Zeppelin - The Wanton Song_MONO.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+
+
+                        <tr style="text-align: center;">
+                            <td>Model B</td>
+                            <td>
+                                <audio controls="controls">
+                                    <source src="http://audio-mafia.media.mit.edu/codec-ab/media/ffs_samples_for_mushra_2/FS_SPEC BASELINE r_01 - Symphony No. 5- Allegro con brio_MONO.wav" type="audio/wav">
+                                </audio>
+                            </td>
+
+                            <td>
+                                <audio controls="controls">
+                                    <source src="http://audio-mafia.media.mit.edu/codec-ab/media/ffs_samples_for_mushra_2/FS_SPEC BASELINE r_01 Yazz And The Plastic Population - The Only Way Is Up_MONO-2.wav" type="audio/wav">
+                                </audio>
+                            </td>
+
+                            <td>
+                                <audio controls="controls">
+                                    <source src="http://audio-mafia.media.mit.edu/codec-ab/media/ffs_samples_for_mushra_2/FS_SPEC BASELINE r_06. Led Zeppelin - The Wanton Song_MONO.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+
+                        <tr style="text-align: center;">
+                            <td>Model C</td>
+                            <td>
+                                <audio controls="controls">
+                                    <source src="http://audio-mafia.media.mit.edu/codec-ab/media/ffs_samples_for_mushra_2/FS_SPEC LOSS r_01 - Symphony No. 5- Allegro con brio_MONO.wav" type="audio/wav">
+                                </audio>
+                            </td>
+
+                            <td>
+                                <audio controls="controls">
+                                    <source src="http://audio-mafia.media.mit.edu/codec-ab/media/ffs_samples_for_mushra_2/FS_SPEC LOSS r_01 Yazz And The Plastic Population - The Only Way Is Up_MONO-2.wav" type="audio/wav">
+                                </audio>
+                            </td>
+
+                            <td>
+                                <audio controls="controls">
+                                    <source src="http://audio-mafia.media.mit.edu/codec-ab/media/ffs_samples_for_mushra_2/FS_SPEC LOSS r_06. Led Zeppelin - The Wanton Song_MONO.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+
+                        <tr style="text-align: center;">
+                            <td>Model D</td>
+                            <td>
+                                <audio controls="controls">
+                                    <source src="http://audio-mafia.media.mit.edu/codec-ab/media/ffs_samples_for_mushra_2/FS_TD LOSS r_01 - Symphony No. 5- Allegro con brio_MONO.wav" type="audio/wav">
+                                </audio>
+                            </td>
+
+                            <td>
+                                <audio controls="controls">
+                                    <source src="http://audio-mafia.media.mit.edu/codec-ab/media/ffs_samples_for_mushra_2/FS_TD LOSS r_01 Yazz And The Plastic Population - The Only Way Is Up_MONO-2.wav" type="audio/wav">
+                                </audio>
+                            </td>
+
+                            <td>
+                                <audio controls="controls">
+                                    <source src="http://audio-mafia.media.mit.edu/codec-ab/media/ffs_samples_for_mushra_2/FS_TD LOSS r_06. Led Zeppelin - The Wanton Song_MONO.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+
+                    </table> 
+
+                    
+
             </div><!-- /.blurb -->
         </div><!-- /.container -->
         <footer>
             <ul>
-                <li><a href="mailto:hankquinlanhub@gmail.com">email</a></li>
-                <li><a href="https://github.com/hankquinlan">github.com/hankquinlan</a></li>
+                <li>[Contacts and Authors Censored for Review]</li>
             </ul>
+            
         </footer>
     </body>
 </html>
